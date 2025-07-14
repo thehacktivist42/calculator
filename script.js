@@ -13,7 +13,7 @@ function multiply(first, second) {
 function divide(first, second) {
     return first / second;
 }
-let num1 = 0, operator = '', num2 = 0;
+let num1 = NaN, operator = '', num2 = NaN;
 
 function operate(num1, operator, num2) {
     switch (operator) {
@@ -32,3 +32,19 @@ function operate(num1, operator, num2) {
             return 'Invalid operator'
     }
 }
+
+function populate(char) {
+    display = document.querySelector(".display");
+    display.textContent += char.textContent;
+}
+
+numList = document.querySelectorAll('.number');
+operatorList = document.querySelectorAll('.operator');
+
+numList.forEach(num => {
+    num.addEventListener('click', () => populate(num));
+});
+
+operatorList.forEach(operator => {
+    operator.addEventListener('click', () => populate(operator));
+});
