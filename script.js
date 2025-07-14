@@ -48,3 +48,9 @@ numList.forEach(num => {
 operatorList.forEach(operator => {
     operator.addEventListener('click', () => populate(operator));
 });
+
+function clear() {
+    document.querySelector(".display").textContent = "";
+}
+
+document.querySelector("#clear").addEventListener("click", () => clear());
